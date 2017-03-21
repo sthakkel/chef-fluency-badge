@@ -6,14 +6,8 @@
 #
 # Install apache package
 
-if node['platform_family'] == "rhel"
-	package = "httpd"
-elsif node['platform_family'] == "debian"
-	package = "apache2"
-end
-
 package 'apache2' do
-	package_name package
+	package_name 'httpd' 
 	action :install
 end
 
